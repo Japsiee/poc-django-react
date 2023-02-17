@@ -9,6 +9,42 @@ import {
 } from "react-icons/im";
 
 const Home = () => {
+  const upClick = async () => {
+    try {
+      console.log("up");
+      // const result = await fetch('http://localhost:8080/upclick');
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const downClick = async () => {
+    try {
+      console.log("down");
+      // const result = await fetch('http://localhost:8080/downclick');
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const leftClick = async () => {
+    try {
+      console.log("left");
+      // const result = await fetch('http://localhost:8080/lefclick');
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const rightClick = async () => {
+    try {
+      console.log("right");
+      // const result = await fetch('http://localhost:8080/rightclick');
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="p-5 h-screen">
       <div
@@ -23,7 +59,10 @@ const Home = () => {
             controls
             autoPlay
           >
-            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2" ' />
+            <source
+              src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
+              type='video/mp4; codecs="avc1.42E01E, mp4a.40.2" '
+            />
           </video>
 
           {/* 2nd option -> this one is for http streaming */}
@@ -38,7 +77,6 @@ const Home = () => {
 
           {/* 3rd option -> iframe http stream */}
           {/* <iframe className="absolute top-0 left-0 w-full h-full" src="https://test.antmedia.io:5080/WebRTCAppEE/play.html?name=554221610006205395756180" frameborder="0" allowfullscreen></iframe> */}
-
         </div>
         <div id="camera-pan" className="flex flex-col absolute top-10 right-10">
           <AiOutlinePlusCircle className="text-6xl my-2" />
@@ -49,14 +87,14 @@ const Home = () => {
           className="flex flex-col absolute bottom-10 right-10 w-44"
         >
           <div className="flex justify-center items-center">
-            <ImArrowUp className="text-6xl" />
+            <ImArrowUp className="text-6xl" onClick={upClick} />
           </div>
           <div className="flex justify-between items-center">
-            <ImArrowLeft className="text-6xl" />
-            <ImArrowRight className="text-6xl" />
+            <ImArrowLeft className="text-6xl" onClick={leftClick} />
+            <ImArrowRight className="text-6xl" onClick={rightClick} />
           </div>
           <div className="flex justify-center items-center">
-            <ImArrowDown className="text-6xl" />
+            <ImArrowDown className="text-6xl" onClick={downClick} />
           </div>
         </div>
       </div>
