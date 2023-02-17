@@ -5,7 +5,7 @@ import { render } from "react-dom";
 // components
 import Home from "./Home";
 import About from "./About";
-import Page404 from "./page404";
+import Page404 from "./Page404";
 
 const App = () => {
   return (
